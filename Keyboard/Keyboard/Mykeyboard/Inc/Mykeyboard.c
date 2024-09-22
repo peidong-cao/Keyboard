@@ -140,6 +140,7 @@ void Mykeyboard_Key_Filter_Ready()
 
 void Mykeyboard_Key_Send()
 {
+    
     Mykeyboard_Key_Scanf(ROW_GPIO_Port, Key_RowN, COL_GPIO_Port, Key_ColN);
     if (Keyboard_Change_Flag)
     {
@@ -161,7 +162,7 @@ void Mykeyboard_Key_Text()
     printf("K%d\n", Keyboard_Value_Flag);
     if (Keyboard_Change_Flag)
     {
-        delay_us(100);
+        delay_us(100);//进行注释
         Mykeyboard_Key_Filter_Scanf(ROW_GPIO_Port, Key_RowN, COL_GPIO_Port, Key_ColN);
         Mykeyboard_Key_Filter_Ready();
         for (int i = 0; i < Keyboard_Value_Flag; i++)
